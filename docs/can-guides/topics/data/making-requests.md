@@ -88,7 +88,7 @@ connection.getList({}).then(todos => {
 
 ### Customizing the request method and URL
 
-Some applications will not follow the conventions expected by the [can-connect/data/url/url data-url behavior]. For example an application might only support `GET` and `POST` request methods or might use a unique URL structure. You can configure individual CRUD endpoints by defining the method and URL for each endpoint:
+Some applications will not follow the conventions expected by the [can-connect/data/url/url data-url behavior]. For example an application might only support `GET` and `POST` request methods or might use a unique URL structure. The following example shows how you can configure individual CRUD endpoints by defining the method and URL for each service method:
 
 ```js
 const connection = restModel({
@@ -104,7 +104,9 @@ const connection = restModel({
 
 ### Implementing the DataInterface yourself
     
-Consider a situation where an application loads all incomplete TODOs from a special URL like `/api/todos/incomplete`. In such cases, you can write a custom [can-connect/data/url/url.getListData getListData] function which performs the actual ajax request. You can implement any of the [can-connect/DataInterface] methods in a similar way:
+Consider a situation where an application loads all incomplete TODOs from a special URL like `/api/todos/incomplete`. In such cases, you can write a custom [can-connect/data/url/url.getListData getListData] function which performs the actual ajax request. 
+
+> **Note:** You can implement any of the [can-connect/DataInterface] methods in a similar way as described below.
 
 ```js
 import ajax from 'can-ajax';
